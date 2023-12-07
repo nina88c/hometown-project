@@ -14,7 +14,7 @@ body {
 
 .grid {
   display: grid;
-  grid-gap: 64px;
+  grid-gap: 20px;
 }
 
 .img-responsive {
@@ -36,16 +36,45 @@ body {
 
 .embed {
   width: 100%;
-  aspect-ratio: 1 /1;
+  height: 200px;
+
 }
 
 .instagram-embeds {
-  margin: 30px 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between embeds as needed */
+}
+
+.instagram-post {
+            margin-bottom: 20px; /* Adjust the spacing between posts */
+        }
+
+.instagram-media {
+    /* Adjust the width and other styles for your Instagram posts */
+    margin-bottom: 20px; /* Adjust the spacing between posts */
+}
+
+   
+
+.instagram-embeds .instagram-media {
+  width: calc(33.333% - 20px); /* Calculate the width based on the number of columns */
+  height: 600px; /* Set a fixed height for all embeds */
+  display: block;
+  margin: 0 auto; /* Reset margin */
+  padding: 0 auto; /* Reset padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+ 
+  
 }
 
 .card {
   background: white;
-  margin: 30px 0;
+  margin: 30px;
+  display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .card-header.grid {
@@ -55,23 +84,34 @@ body {
 .card-body {
   padding: 30px;
 }
-
 .card-footer {
-  padding: 0 30px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
 }
 
+.card-footer .btn {
+  margin: 0 10px; 
+}
+
+
+
 .btn {
-  display: block;
-  color: white;
-  font-weight: 700;
-  font-size: 14px;
-  line-height: 21px;
-  text-align: center;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  padding: 16px;
   background-color: #462cb3;
-  text-decoration: none;
+  color: white;
+  display: block;
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.2rem;
+    line-height: 21px;
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 300ms ease-in-out;
+  
+  
 }
 
 section {
@@ -252,5 +292,10 @@ footer a {
 
   .embed {
     aspect-ratio: 16 / 9;
+  }
+  .instagram-embeds .instagram-media {
+    width: calc(50% - 20px); /* Two columns for smaller screens */
+    height: 500px; /* Adjust the height for smaller screens */
+    
   }
 }
